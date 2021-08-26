@@ -2,6 +2,37 @@
 
     <h1>@ViewBag.title</h1>
 
+    @if (ViewBag.jobs.Count == 0)
+     {
+        <p>No job matches this search criteria</p>
+     }
+            else
+            {
+                @foreach (var jobs in ViewBag.jobs)
+                {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Jobs matching your search criteria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var job in ViewBag.jobs)
+                             {
+                             <tr>
+                                 <td><b>
+                                     Id: @job.Id <br />
+                                     Name: @job.Name <br />
+                                     Employer: @job.Employer <br />
+                                     Location: @job.Location <br />
+                                     Postion Type: @job.PositionType <br />
+                                     Core Competency: @job.CoreCompetency </b></td>
+                             </tr>
+                             }
+                        </tbody>
+                    </table>
+                }
+            }
     @{
         //TODO #1: Use a loop to display job results in a table.
     }

@@ -25,7 +25,8 @@ namespace TechJobsMVC.Controllers
             {"employer", JobData.GetAllEmployers()},
             {"location", JobData.GetAllLocations()},
             {"positionType", JobData.GetAllPositionTypes()},
-            {"coreCompetency", JobData.GetAllCoreCompetencies()}
+            {"coreCompetency", JobData.GetAllCoreCompetencies()},
+            //{"all", JobData.GetAllJobs()},
         };
 
         public IActionResult Index()
@@ -36,6 +37,7 @@ namespace TechJobsMVC.Controllers
             ViewBag.locations = JobData.GetAllLocations();
             ViewBag.positionTypes = JobData.GetAllPositionTypes();
             ViewBag.skills = JobData.GetAllCoreCompetencies();
+            //ViewBag.all = JobData.GetAllJobs();
 
             return View();
         }
